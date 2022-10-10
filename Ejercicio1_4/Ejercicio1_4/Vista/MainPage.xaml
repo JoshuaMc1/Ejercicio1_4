@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio1_4.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Ejercicio 1.4" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <StackLayout Padding="15">
+            <StackLayout>
+                <Image 
+                    x:Name="txtImagen"
+                    Source="https://cdn.pixabay.com/photo/2022/10/04/20/32/gears-7499058_960_720.png"
+                    Aspect="AspectFit"
+                    HeightRequest="300"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Margin="0, 10">
+                <Label 
+                    Text="Nombre" 
+                    TextColor="Black" 
+                    FontAttributes="Bold" 
+                    FontSize="Body"/>
+                <Entry 
+                    x:Name="txtNombre" 
+                    Placeholder="Ingrese el nombre" 
+                    Keyboard="Text"
+                    MaxLength="40"/>
+            </StackLayout>
+            <StackLayout Margin="0, 10">
+                <Label 
+                    Text="Descripcion" 
+                    TextColor="Black" 
+                    FontAttributes="Bold" 
+                    FontSize="Body"/>
+                <Entry 
+                    x:Name="txtDescripcion" 
+                    Placeholder="Ingrese el nombre" 
+                    Keyboard="Text"
+                    MaxLength="250"/>
+            </StackLayout>
+            <StackLayout>
+                <Grid Margin="0, 10" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button 
+                        x:Name="txtTomarFoto" 
+                        ImageSource="https://cdn.icon-icons.com/icons2/272/PNG/72/Camera_Moto_30013.png"
+                        Text="Tomar foto"
+                        BackgroundColor="#008492"
+                        TextColor="White"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Clicked="txtTomarFoto_Clicked"/>
+                    <Button
+                        x:Name="txtGuardarFoto"
+                        ImageSource="https://cdn.icon-icons.com/icons2/368/PNG/72/Save-as_37111.png"
+                        Text="Guardar datos"
+                        BackgroundColor="#104F14"
+                        TextColor="White"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Clicked="txtGuardarFoto_Clicked"/>
+                    <Button
+                        x:Name="btnVerLista"
+                        ImageSource="https://cdn.icon-icons.com/icons2/1982/PNG/72/checklist_123014.png"
+                        Text="Ver lista"
+                        BackgroundColor="#003796"
+                        TextColor="White"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Clicked="btnVerLista_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

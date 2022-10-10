@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio1_4.Vista.Lista">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Lista de personas" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <StackLayout>
+                <CollectionView 
+                    Margin="15" 
+                    x:Name="txtLista">
+                    <CollectionView.EmptyView>
+                        <ActivityIndicator 
+                            IsRunning="True"
+                            VerticalOptions="CenterAndExpand"
+                            Color="#2196f3"/>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame
+                                Padding="5"
+                                CornerRadius="10"
+                                BorderColor="White"
+                                BackgroundColor="#E1EDFF">
+                                <Grid HeightRequest="150">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Image 
+                                        Source="{Binding foto}"
+                                        Aspect="AspectFill"
+                                        Grid.RowSpan="5"/>
+                                    <Label
+                                        Grid.Column="1"
+                                        FontSize="Medium"
+                                        Text="Nombre:" 
+                                        TextColor="Black"
+                                        FontAttributes="Bold"/>
+                                    <Label
+                                        Grid.Column="2"
+                                        FontSize="Medium"
+                                        Text="{Binding nombre}" 
+                                        TextColor="Black"
+                                        FontAttributes="Bold"/>
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="Descripcion:"
+                                        TextColor="Black"
+                                        FontSize="Medium"
+                                        FontAttributes="Bold" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.RowSpan="4"
+                                        Grid.Column="2"
+                                        Text="{Binding descripcion}"
+                                        TextColor="Black"
+                                        FontSize="Medium"
+                                        FontAttributes="Bold" />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
